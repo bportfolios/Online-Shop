@@ -1,0 +1,16 @@
+name: Online-Shop
+
+on: push
+
+jobs:
+  online-shop:
+    name: Online Shop base
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Run Online-Shop
+        uses: github/online-shop@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
